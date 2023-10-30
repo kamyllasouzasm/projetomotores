@@ -17,9 +17,9 @@ public class Player : MonoBehaviour
     }
 
 
-    void OnCollisionEnter (Collision col)
+    void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.tag == "Chão");
+        if (col.gameObject.CompareTag == "Chão") {)};
         {
             noChão = true;
         }
@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
         float v = Input.GetAxis("Vertical");// -1 pra tras, 0 nada, 1 pra frente
 
         Vector3 direcao = new Vector3(h, 0, v);
-        rb.AddForce(direcao * velocidade * Time.deltaTime,ForceMode.Impulse);
+        rb.AddForce(Time.deltaTime * velocidade * direcao, ForceMode.Impulse);
 
         //pulo
         if (Input.GetKeyDown(KeyCode.Space) && noChão ) {
