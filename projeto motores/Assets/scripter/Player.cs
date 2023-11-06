@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
 
     void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.CompareTag == "Chão") {)};
+        if (col.gameObject.CompareTag("Chão"))
         {
             noChão = true;
         }
